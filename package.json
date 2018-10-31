@@ -1,0 +1,26 @@
+{
+  "name": "expresswalkthrough2",
+  "version": "1.0.0",
+  "description": "walkthrough using mongo and express and a database at mLab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sealanguage/expressMongoUsingmLab.git"
+  },
+  "author": "elaine froehlich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sealanguage/expressMongoUsingmLab/issues"
+  },
+  "homepage": "https://github.com/sealanguage/expressMongoUsingmLab#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.7",
+    "nodemon": "^1.18.5"
+  }
+}
