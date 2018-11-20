@@ -61,22 +61,37 @@ router.post('/', (req, res) => {
 //         // .catch(err => req.status(500).json({ message: err }));
        
 // })
-
-
-
-router.delete('/:profileage', (req, res) => {
+router.delete('/:lastname', (req, res) => {
     // TODO: protected route ensure the user is the one deleting
-    const profileage = req.params.profileage;
-    Profile.findOne({ profileage: profileage })
+    const lastname = req.params.lastname;
+    Profile.findOne({ lastname: lastname })
         .then(profiles => {
             // console.log(user)
             if (!profiles) {
-                return res.status(404).json({ message: `Profile: ${profileage} not found` })
+                return res.status(404).json({ message: `Profile: ${lastname} not found` })
             }
             profiles.remove()
                 .then(() => res.status(204).json({ message: "Profile successfully deleted" }))
                 .catch(err => res.status(500).json({ message: err }));
         })
+        // .catch(err => req.status(500).json({ message: err }));
+
+});
+
+
+// router.delete('/:profileage', (req, res) => {
+//     // TODO: protected route ensure the user is the one deleting
+//     const profileage = req.params.profileage;
+//     Profile.findOne({ profileage: profileage })
+//         .then(profiles => {
+//             // console.log(user)
+//             if (!profiles) {
+//                 return res.status(404).json({ message: `Profile: ${profileage} not found` })
+//             }
+//             profiles.remove()
+//                 .then(() => res.status(204).json({ message: "Profile successfully deleted" }))
+//                 .catch(err => res.status(500).json({ message: err }));
+//         })
 //         // .catch(err => req.status(500).json({ message: err }));
          
         // router.remove('/:profileage', (req, res) => {
@@ -94,7 +109,7 @@ router.delete('/:profileage', (req, res) => {
         //         })
             //         findOneAndUpdate()
         // })
-});
+// });
 
 // router.put('/:lastname', (req, res) => {
 
