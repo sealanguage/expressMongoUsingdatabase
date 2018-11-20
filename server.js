@@ -4,12 +4,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const users = require('./routes/api/users');
+const profiles = require('./routes/api/profiles');
 
 app.use(bodyParser.urlencoded({extended: false}))    // looks for url encoded true, extended false
 app.use(bodyParser.json())   //  converts data to json format and dont then need regex etc.
 
 
 app.use('/api/users', users);
+app.use('/api/profiles', profiles);
 
 const db = require('./config/keys').mongoURI;
 
