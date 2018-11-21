@@ -96,8 +96,8 @@ router.delete('/:lastname', (req, res) => {
 // });
 
 router.put('/:lastnmae', (req, res) => {
-    res.send({success: "update is working"})
-
+    res.send({success: "update is working"});
+    console.log("reading router.put for update");
         Profile.findOne({ lastname })
                 .then(profiles => { 
                     console.log("foundOne profile")
