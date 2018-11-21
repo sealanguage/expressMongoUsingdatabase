@@ -95,12 +95,20 @@ router.delete('/:lastname', (req, res) => {
         // })
 // });
 
-router.put('/:lastname', (req, res) => {
+router.put('/:lastnmae', (req, res) => {
+    res.send({success: "update is working"})
 
-    //             // findOne()
-    //             //     .then(profile) => {
-    //             //         findOneAndUpdate()
- })
+        Profile.findOne({ lastname })
+                .then(profiles => { 
+                    console.log("foundOne profile")
+                    if (!profile) {
+                        return res.status(404).json({ message: `Profiel ${lastname} not found` })
+                    }
+                profile.update(profiles)
+                .then()
+                .catch()
+        })
+    });
 module.exports = router;
 
 
@@ -109,13 +117,13 @@ module.exports = router;
 // One profile -  done
 // All profiles -  done
 
-// Create:
+// Create: done 
 // New profile
 
 // Update:
 // profile
 
-// Delete
+// Delete done
 // profile
 
 // Object.keys(obj_name)
