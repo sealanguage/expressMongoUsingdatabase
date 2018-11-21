@@ -95,12 +95,12 @@ router.delete('/:lastname', (req, res) => {
         // })
 // });
 
-// router.put('/:lastname', (req, res) => {
+router.put('/:lastname', (req, res) => {
 
     //             // findOne()
     //             //     .then(profile) => {
     //             //         findOneAndUpdate()
-    //         })
+ })
 module.exports = router;
 
 
