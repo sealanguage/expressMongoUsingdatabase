@@ -45,22 +45,7 @@ router.post('/', (req, res) => {
         });
 })
 
-// router.delete('/:lastname', (req, res) => {
-//     // TODO: protected route ensure the user is the one deleting
-//     const lastname = req.params.lastname;
-//     Profile.find({ lastname: lastname })
-//         .then(profiles => {
-//             // console.log(user)
-//             if (!profiles) {
-//                 return res.status(404).json({ message: `Profile: ${lastname} not found` })
-//             }
-//             profiles.remove()
-//                 .then(() => res.status(204).json({ message: "Profile successfully deleted" }))
-//                 .catch(err => res.status(500).json({ message: err }));
-//         })
-//         // .catch(err => req.status(500).json({ message: err }));
-       
-// })
+//  profile delete does work
 router.delete('/:lastname', (req, res) => {
     // TODO: protected route ensure the user is the one deleting
     const lastname = req.params.lastname;
@@ -75,10 +60,9 @@ router.delete('/:lastname', (req, res) => {
                 .catch(err => res.status(500).json({ message: err }));
         })
         // .catch(err => req.status(500).json({ message: err }));
-
 });
 
-
+// this delete by profileage does work 
 // router.delete('/:profileage', (req, res) => {
 //     // TODO: protected route ensure the user is the one deleting
 //     const profileage = req.params.profileage;
