@@ -99,14 +99,14 @@ router.put('/:lastnmae', (req, res) => {
     res.send({success: "update is working"});
     console.log("reading router.put for update");
         Profile.findOne({ lastname })
-                .then(profiles => { 
-                    console.log("foundOne profile")
-                    if (!profile) {
-                        return res.status(404).json({ message: `Profiel ${lastname} not found` })
-                    }
-                profile.update(profiles)
-                .then()
-                .catch()
+            .then(profiles => { 
+                console.log("foundOne profile")
+                if (!profile) {
+                    return res.status(404).json({ message: `Profiel ${lastname} not found` })
+                }
+            profile.update(profiles)
+            .then(() => res.status().json({message: "Profile successfully updated"}))
+            .catch()
         })
     });
 module.exports = router;
