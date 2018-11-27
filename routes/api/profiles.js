@@ -96,8 +96,9 @@ router.delete('/:lastname', (req, res) => {
 // });
 
 router.put('/:lastnmae', (req, res) => {
-    res.send({success: "update is working"});
+    res.send({success: "update is working"});  //  this response shows up on screen
     console.log("reading router.put for update");
+    const { firstname, lastname, email, profileage } = req.body;
         Profile.findOne({ lastname })
             .then(profiles => { 
                 console.log("foundOne profile")
@@ -111,19 +112,18 @@ router.put('/:lastnmae', (req, res) => {
     });
 module.exports = router;
 
-
+// Assignment: Mongo_Express Creating a Models Router
 
 // Read:
-// One profile -  done
-// All profiles -  done
+// One profile - OK
+// All profiles - OK
 
-// Create: done 
-// New profile
+// Create: 
+// New profile - OK
 
 // Update:
 // profile
 
-// Delete done
-// profile
+// Delete 
+// profile - OK
 
-// Object.keys(obj_name)
